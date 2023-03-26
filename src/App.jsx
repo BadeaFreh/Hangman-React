@@ -1,8 +1,15 @@
 import React from 'react'
+import Solution from './components/Solution'
+import Score from './components/Score'
+import Letters from './components/Letters'
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+      <Score />
+      <Solution />
+      <Letters />
+    </>
   )
 }
 
