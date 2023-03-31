@@ -1,13 +1,19 @@
 import React from 'react'
 import Letter from './Letter'
 
-const Letters = () => {
-    const alpha = Array.from(Array(26)).map((e, i) => i + 65)
-    const alphabet = alpha.map((x) => String.fromCharCode(x))
-
+const Letters = ({alphabet, selectLetter}) => {
     return (
         <>
-            {alphabet.map(letter => <Letter>{letter}</Letter>)}
+        <div>Available Letters:</div>
+        {Object.keys(alphabet).map((letter) => {
+            return (
+                <Letter 
+                key={letter} 
+                isClicked={alphabet[letter]? 'guessed': ''} 
+                selectLetter={selectLetter} 
+                letter={letter} />
+            )
+            })}
         </>
     )
 }

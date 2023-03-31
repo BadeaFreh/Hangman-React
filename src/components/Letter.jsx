@@ -1,8 +1,9 @@
 import React from 'react'
+import './Letter.css'
 
-const Letter = (props) => {
+const Letter = ({selectLetter, letter, isClicked}) => {
   return (
-    <span> {props.children} </span>
+    <span onClick={() => selectLetter(letter)} className={isClicked}> {letter} </span>
   )
 }
 

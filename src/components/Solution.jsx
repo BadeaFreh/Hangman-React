@@ -1,11 +1,17 @@
 import React from 'react'
+import Letter from './Letter'
 
-const Solution = () => {
-  return ( <>
-    {[...Array(4).fill(<span> _ </span>)].map(underscore => underscore)}
-    <div><em>Your ideal mood when coding</em></div>
-    </>
-  )
+const Solution = ({alphabet, solution: {word, hint}}) => {
+  return (
+  <>
+    {word.split('').map((letter, index) => 
+    <Letter 
+      key={`${letter}-${index}`} 
+      letter={alphabet[letter]? letter: '_'}/>
+    )}
+    <div><em>{hint}</em></div><br />
+    
+  </>)
 }
 
 export default Solution
